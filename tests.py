@@ -1,6 +1,5 @@
 from __future__ import print_function, absolute_import, unicode_literals
 import unittest
-from mock import Mock
 
 import cosinetransform as ct
 import numpy
