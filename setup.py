@@ -2,11 +2,11 @@ from distutils.core import setup
 
 setup(
     name='cosine_transform',
-    version='0.0.1',
+    version='0.0.2',
     packages=[''],
     url='https://github.com/calvingiles/cosine_transform',
-    download_url='https://github.com/calvingiles/cosine_transform/tarball/0.0.1',
-    license='',
+    download_url='https://github.com/calvingiles/cosine_transform/tarball/0.0.2',
+    license='LICENCE.txt',
     author='calvin',
     author_email='calvin.giles@gmail.com',
     description='Transform a vector to a new vector a given cosine distance away.',
