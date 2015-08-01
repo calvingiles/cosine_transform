@@ -4,7 +4,7 @@ setup(
     name='cosine_transform',
     version='0.0.1',
     packages=[''],
-    url='',
+    url='https://github.com/calvingiles/cosine_transform',
     license='',
     author='calvin',
     author_email='calvin.giles@gmail.com',
