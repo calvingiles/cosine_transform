@@ -3,7 +3,7 @@ from distutils.core import setup
 setup(
     name='cosine_transform',
     version='0.0.2',
-    packages=[''],
+    packages=['cosine_transform'],
     url='https://github.com/calvingiles/cosine_transform',
     download_url='https://github.com/calvingiles/cosine_transform/tarball/0.0.2',
     license='LICENCE.txt',

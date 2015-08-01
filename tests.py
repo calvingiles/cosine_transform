@@ -1,9 +1,9 @@
 from __future__ import print_function, absolute_import, unicode_literals
 import unittest
 
-import cosinetransform as ct
+import cosine_transform as ct
 import numpy
-from scipy.spatial.distance import norm, cosine
+from scipy.spatial.distance import cosine
 
 __author__ = 'calvin'
 

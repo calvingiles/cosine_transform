@@ -35,7 +35,7 @@ install:
   - python setup.py build
 script:
 #  - nosetests
-  - coverage run --source=gwpy --omit="gwpy/tests/*,gwpy/*version*" -m py.test -v
+  - coverage run -m py.test -v
   - pip install .
 after_success:
   - coveralls
