@@ -35,6 +35,7 @@ install:
   - python setup.py install
 script:
 #  - coverage run --source=cosine_transform -m nosetests
-  - coverage run --source=cosine_transform -m py.test -v
+  - nosetests --with-coverage
+  #- coverage run --source=cosine_transform -m py.test -v
 after_success:
   - coveralls
