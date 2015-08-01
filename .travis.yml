@@ -11,8 +11,8 @@ addons:
       - libatlas-base-dev
       - gfortran
 before_install:
-  - mkdir builds
-  - pushd builds
+  #- mkdir builds
+  #- pushd builds
   # install numpy non-python dependencies
   #- sudo apt-get install -qq libatlas-dev libatlas-base-dev gfortran
   # add LSCSoft sources
@@ -30,13 +30,13 @@ before_install:
   - pip install -q importlib
   - pip install -q pytest
   - pip install -q coveralls
-  - popd
+  #- popd
 install:
-  - python setup.py build
+  - python setup.py install
 script:
-#  - nosetests
-  - coverage run -m py.test -v
-  - pip install .
+  - nosetests
+#  - coverage run -m py.test -v
+  #- python setup.py install
 after_success:
   - coveralls
 #  - pip install -r requirements.txt
