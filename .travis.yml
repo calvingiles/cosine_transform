@@ -1,9 +1,8 @@
 language: python
 python:
   - "2.7"
-  # does not have headers provided, please ask https://launchpad.net/~pypy/+archive/ppa
-  # maintainers to fix their pypy-dev package.
 sudo: false
+cache: pip
 addons:
   apt:
     packages:
@@ -11,31 +10,13 @@ addons:
       - libatlas-base-dev
       - gfortran
 before_install:
-  #- mkdir builds
-  #- pushd builds
-  # install numpy non-python dependencies
-  #- sudo apt-get install -qq libatlas-dev libatlas-base-dev gfortran
-  # add LSCSoft sources
-  #- echo "deb http://software.ligo.org/lscsoft/debian wheezy contrib" | sudo tee -a /etc/apt/sources.list
-  #- sudo apt-get update -qq
-  #- sudo apt-get --assume-yes --allow-unauthenticated install lscsoft-archive-keyring
-  #- sudo apt-get update -qq
-  #- sudo apt-get --assume-yes install libhdf5-dev lal-python lalframe-python ldas-tools-framecpp-python
-  #- sudo apt-get --assume-yes install python-nds2-client
-  # install numpy
   - travis_retry pip install -q numpy==1.8.0
-  # install scipy
   - travis_wait pip install -q scipy==0.13.2
-  #- pip install -q unittest2
-  #- pip install -q importlib
   - pip install -q pytest
   - pip install -q coveralls
-  #- popd
-install:
-  - python setup.py install
+#install:
+#  - python setup.py install
 script:
-#  - coverage run --source=cosine_transform -m nosetests
-  #- nosetests --with-coverage
   - coverage run --source=cosine_transform -m py.test -v tests
 after_success:
   - coveralls
