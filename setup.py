@@ -5,6 +5,7 @@ setup(
     version='0.0.1',
     packages=[''],
     url='https://github.com/calvingiles/cosine_transform',
+    download_url='https://github.com/calvingiles/cosine_transform/tarball/0.0.1',
     license='',
     author='calvin',
     author_email='calvin.giles@gmail.com',
