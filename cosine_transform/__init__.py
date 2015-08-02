@@ -3,7 +3,7 @@ import numpy
 from numpy import sin, cos, arccos, dot, isclose, count_nonzero
 from scipy.spatial.distance import cosine, norm
 
-__author__ = 'calvin'
+__author__ = 'calvin.giles@gmail.com'
 
 
 def transform_to_similarity(v, s):
