@@ -20,7 +20,7 @@ install:
 
 # Run test
 script:
-  - nosetests --with-coverage --cover-package=cosine_transform --cov-config .coveragerc --logging-level=INFO
+  - nosetests --with-coverage --cover-package=cosine_transform --logging-level=INFO
 
 # Calculate coverage
 after_success:
