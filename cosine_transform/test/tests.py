@@ -57,10 +57,9 @@ class VariableVTransformTestCase(unittest.TestCase):
     def test_similarity_out_of_bounds(self):
         v = numpy.array([0, 1])
         for s in self.oob_ss:
-            if numpy.isclose(s, 1) or numpy.isclose(s, -1):
-                continue
-            self.assertRaises(ValueError, ct.transform_to_similarity, *(v, s))
-            self.assertRaises(ValueError, ct.transform_to_similarity, *(v, -s))
+            if not (numpy.isclose(s, 1) or numpy.isclose(s, -1)):
+                self.assertRaises(ValueError, ct.transform_to_similarity, *(v, s))
+                self.assertRaises(ValueError, ct.transform_to_similarity, *(v, -s))
 
     def test_distance_zero(self):
         for v in self.vs:
@@ -75,13 +74,11 @@ class VariableVTransformTestCase(unittest.TestCase):
     def test_distance_out_of_bounds(self):
         v = numpy.array([0, 1])
         for d in self.oob_dsp:
-            if numpy.isclose(d, 2):
-                continue
-            self.assertRaises(ValueError, ct.transform_to_distance, *(v, d))
+            if not numpy.isclose(d, 2):
+                self.assertRaises(ValueError, ct.transform_to_distance, *(v, d))
         for d in self.oob_dsm:
-            if numpy.isclose(d, 0):
-                continue
-            self.assertRaises(ValueError, ct.transform_to_distance, *(v, d))
+            if not numpy.isclose(d, 0):
+                self.assertRaises(ValueError, ct.transform_to_distance, *(v, d))
 
     def test_similarity(self):
         for v in self.vs:
