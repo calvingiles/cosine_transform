@@ -39,6 +39,11 @@ class VariableVTransformTestCase(unittest.TestCase):
         s = 1
         self.assertRaises(ValueError, ct.transform_to_similarity, *(v, s))
 
+    def test_vector_of_zeros(self):
+        v = numpy.array([0, 0, 0])
+        s = 1
+        self.assertRaises(ValueError, ct.transform_to_similarity, *(v, s))
+
     def test_similarity_one(self):
         for v in self.vs:
             u = ct.transform_to_similarity(v, 1)
