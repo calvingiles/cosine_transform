@@ -17,6 +17,6 @@ before_install:
 #install:
 #  - python setup.py install
 script:
-  - coverage run --source=cosine_transform -m py.test -v tests
+  - coverage run --source=cosine_transform -m py.test -v
 after_success:
   - coveralls
